@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>САША КОЗА</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff; 
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 10vw; 
+            margin: 0;
+            z-index: 10; 
+        }
+
+        img {
+            position: absolute;
+            bottom: 20px; 
+            left: 50%;
+            transform: translateX(-50%); 
+            width: 350px; 
+            z-index: 10; 
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>САША СТЕРВА</h1>
+    <img src="./christmas-277_256.gif" alt="Christmas Image">
+
+    <script>
+        const body = document.body;
+
+        function createSnowflake() {
+            const snowflake = document.createElement("div");
+            const size = Math.random() * 5 + 5; 
+            const duration = Math.random() * 5 + 3; 
+            const positionX = Math.random() * window.innerWidth; 
+
+            snowflake.classList.add("snowflake");
+            snowflake.style.width = `${size}px`;
+            snowflake.style.height = `${size}px`;
+            snowflake.style.left = `${positionX}px`;
+            snowflake.style.animationDuration = `${duration}s`;
+
+            body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, duration * 1000);
+        }
+
+        setInterval(createSnowflake, 100);
+    </script>
+</body>
+</html>
