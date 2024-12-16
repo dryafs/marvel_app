@@ -1,5 +1,9 @@
 Here is a project I did during my training, here I have involved not a fake but a real API. There is not enough functionality to interact with data, but this project helped me to learn in practice everything about the API, as well as writing an application on React, where the hierarchy in which states are inside their component.
 
+For work with project:
+npm i
+npm start
+
 API I used for this project: https://developer.marvel.com/
 
 Web application design:
